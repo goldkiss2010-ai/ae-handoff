@@ -34,8 +34,8 @@ Applicable developer terms: https://www.adobe.com/go/developer-terms
 Verified linked edition: June 18, 2024, sections 4.1(A), 4.3 and 4.5.
 The actual Adobe terms govern distribution and required notices. Preserve
 this file when redistributing the combined binary. Review notices again
-if the SDK or bundled dependencies change. The package remains a private
-preview; this review does not publish it.
+if the SDK or bundled dependencies change. This notice review describes
+the supplied inventory; the distributed plugin remains a preview build.
 
 ### Adobe notice 1
 
