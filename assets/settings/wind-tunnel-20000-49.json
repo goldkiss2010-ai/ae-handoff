@@ -1,0 +1,61 @@
+{
+  "asset": "wind-tunnel",
+  "description": "Cylinder potential-flow tracers plus a manufactured unsteady streamfunction wake; not CFD.",
+  "profile": "point3-pv",
+  "particle_count": 20000,
+  "sample_count": 49,
+  "sample_rate": 1,
+  "progress_coordinate": "stored_sample_index",
+  "velocity": "dx/dq per stored sample interval",
+  "length_unit": "unitless",
+  "coordinate_system": "right-handed XYZ, Z-up",
+  "scalar0": "unused, zero",
+  "visibility": "1 for all slots; particle identities never recycled",
+  "bounds_min": [
+    -8.999417304992676,
+    -3.2006568908691406,
+    -0.13999509811401367
+  ],
+  "bounds_max": [
+    8.411109924316406,
+    3.2001914978027344,
+    0.13999228179454803
+  ],
+  "file_size_bytes": 31360032,
+  "sha256": "ab3f5e4b3ca1239b561eb9276eb819c24e280605b89c8f2655330c3e685aa283",
+  "seed": 20261004,
+  "generator": "assets/generators/make_fields.py",
+  "settings": {
+    "asset": "wind-tunnel",
+    "count": 20000,
+    "samples": 49,
+    "seed": 20261004,
+    "internal_phase_span": 4.0
+  },
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5"
+  },
+  "suggested_ae": {
+    "samples_per_second": 12.0,
+    "sample_offset": 0,
+    "mode": "Dot",
+    "density_percent": 100,
+    "size": 1,
+    "object_rotation_xyz_degrees": [
+      0,
+      0,
+      0
+    ],
+    "speed_brightness": 0,
+    "streak_time": 0,
+    "notes": "Use plugin visual defaults; only Smoke Plume Rotation X=-75 and Ripple Sheet Rotation X=15 differ. Playback rate is specified separately for sample-count matching.",
+    "visual_settings_base": "plugin_defaults"
+  },
+  "playback_note": "Suggested 4-second playback is a DCC setting, not an absolute time encoded in FLD1. Endpoint hold; not a seamless loop.",
+  "reproducibility": "Seed and settings retained; byte identity across NumPy/platform versions is not guaranteed.",
+  "distribution_status": "Private distribution draft; code MIT; distributed cache/settings/previews CC0-1.0; no third-party source media.",
+  "generator_license": "MIT",
+  "asset_license": "CC0-1.0",
+  "asset_rightsholder": "Bungaku Yokota"
+}

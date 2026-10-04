@@ -1,0 +1,82 @@
+{
+  "package": "AE Handoff Windows x64 preview",
+  "version": "1.14 development build 1",
+  "publication_status": "Windows x64 preview distribution",
+  "architecture": "x86-64",
+  "binary": {
+    "filename": "AEHandoff.aex",
+    "size_bytes": 349184,
+    "sha256": "80478a01f92998c4ae9d76dceea52abcc9d64a9e5ad002ee31f993de3051044d",
+    "pipl_effect_version": 983041,
+    "imports": [
+      "COMDLG32.dll",
+      "USER32.dll",
+      "KERNEL32.dll",
+      "MSVCP140.dll",
+      "VCRUNTIME140.dll",
+      "VCRUNTIME140_1.dll",
+      "api-ms-win-crt-runtime-l1-1-0.dll",
+      "api-ms-win-crt-string-l1-1-0.dll",
+      "api-ms-win-crt-math-l1-1-0.dll",
+      "api-ms-win-crt-stdio-l1-1-0.dll",
+      "api-ms-win-crt-filesystem-l1-1-0.dll",
+      "api-ms-win-crt-heap-l1-1-0.dll"
+    ],
+    "linker_version": "14.44",
+    "pe_timestamp_utc": "2026-10-04T00:21:20+00:00",
+    "exports": [
+      "EffectMain",
+      "PluginDataEntryFunction2"
+    ],
+    "debug_runtime_imports": false,
+    "embedded_pdb_configuration": "Release",
+    "uploaded_filename": "AEHandoff(1).aex",
+    "received_date": "2026-10-04"
+  },
+  "source_reference": {
+    "repository": "https://github.com/goldkiss2010-ai/ae-handoff",
+    "linkage": "Prebuilt Windows x64 binary supplied by the author. Exact source-to-binary reproducibility has not been independently verified; plugin source and build history are private."
+  },
+  "verification": {
+    "windows_build": "compiled binary received; independent Windows build previously reported successful by user",
+    "ae_basic_operation": "passed, reported by user on 2026-10-04 after testing the replacement ZIP",
+    "ae_version": null,
+    "windows_version": null,
+    "aep_save_restart_restore": "pending",
+    "duplicate_and_undo_redo": "pending",
+    "separate_pc_without_sdk": "pending",
+    "asset_visual_validation": "pending",
+    "packaged_binary_equal_to_upload": true,
+    "orbit_format_finite_records": "passed",
+    "static_pe_registration_runtime": "passed",
+    "ae_basic_operation_binary_sha256": "80478a01f92998c4ae9d76dceea52abcc9d64a9e5ad002ee31f993de3051044d"
+  },
+  "sample": {
+    "filename": "samples/orbit-sample-index.fld1",
+    "particles": 128,
+    "samples": 25,
+    "sample_rate": 1,
+    "recommended_samples_per_second": 12,
+    "sample_offset": 0,
+    "end_hold_after_seconds": 2
+  },
+  "runtime": {
+    "visual_c_plus_plus": "v14 x64, same or newer than the build toolset",
+    "official_information": "https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist/",
+    "official_x64_download": "https://aka.ms/vc14/vc_redist.x64.exe"
+  },
+  "license_status": "MIT for original plugin contributions; CC0-1.0 for sample data/settings; Adobe components excluded",
+  "additional_development_verification": {
+    "independent_windows_build": "passed, reported by user on 2026-10-04",
+    "independent_build_ae_basic_operation": "passed, reported by user on 2026-10-04",
+    "new_binary_received": true,
+    "replacement_binary_ae_basic_operation": "passed, reported by user on 2026-10-04"
+  },
+  "distribution_scope": {
+    "plugin": "compiled binary only",
+    "plugin_source": "private, not included",
+    "build_configuration": "private, not included",
+    "development_history": "private, not included",
+    "fld1_and_generators": "Separate distribution: MIT code/docs, CC0-1.0 bundled assets"
+  }
+}

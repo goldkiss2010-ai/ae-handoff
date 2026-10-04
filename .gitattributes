@@ -1,0 +1,2 @@
+# Preserve the supplied SDK notices verbatim.
+THIRD_PARTY_NOTICES.md whitespace=-blank-at-eol

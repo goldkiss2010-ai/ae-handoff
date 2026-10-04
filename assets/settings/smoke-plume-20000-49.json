@@ -1,0 +1,72 @@
+{
+  "asset": "smoke-plume",
+  "description": "Continuous emission from one fixed point into a manufactured rising flow with procedural particle dispersion; no fluid solve.",
+  "profile": "point3-pv",
+  "particle_count": 20000,
+  "sample_count": 49,
+  "sample_rate": 1,
+  "progress_coordinate": "stored_sample_index",
+  "velocity": "dx/dq per stored sample interval",
+  "length_unit": "unitless",
+  "coordinate_system": "right-handed XYZ, Z-up",
+  "scalar0": "unused, zero",
+  "visibility": "0 before emission, smooth activation after birth; Dot mode uses the visibility threshold",
+  "bounds_min": [
+    -1.0836644172668457,
+    -0.3345464766025543,
+    0.0
+  ],
+  "bounds_max": [
+    0.5776401162147522,
+    1.9636820554733276,
+    2.8135933876037598
+  ],
+  "file_size_bytes": 31360032,
+  "sha256": "60f1cf19093c79a1f3ce4be34f688696c079ffffd90744851975e7d5faa87cf8",
+  "seed": 20261004,
+  "generator": "assets/generators/make_fields.py",
+  "settings": {
+    "asset": "smoke-plume",
+    "count": 20000,
+    "samples": 49,
+    "seed": 20261004,
+    "internal_phase_span": 4.0
+  },
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5"
+  },
+  "suggested_ae": {
+    "samples_per_second": 12.0,
+    "sample_offset": 0,
+    "mode": "Dot",
+    "density_percent": 100,
+    "size": 1,
+    "object_rotation_xyz_degrees": [
+      -75,
+      0,
+      0
+    ],
+    "speed_brightness": 0,
+    "streak_time": 0,
+    "notes": "Use plugin visual defaults; only Smoke Plume Rotation X=-75 and Ripple Sheet Rotation X=15 differ. Playback rate is specified separately for sample-count matching.",
+    "visual_settings_base": "plugin_defaults"
+  },
+  "emission": {
+    "source": [
+      0,
+      0,
+      0
+    ],
+    "birth_phase_min": 0.08,
+    "birth_phase_max": 3.98,
+    "activation_phase_span": 0.15,
+    "slot_policy": "fixed count and identity; hidden stationary slots at emitter until their birth"
+  },
+  "playback_note": "Suggested 4-second playback is a DCC setting, not an absolute time encoded in FLD1. Endpoint hold; not a seamless loop.",
+  "reproducibility": "Seed and settings retained; byte identity across NumPy/platform versions is not guaranteed.",
+  "distribution_status": "Private distribution draft; code MIT; distributed cache/settings/previews CC0-1.0; no third-party source media.",
+  "generator_license": "MIT",
+  "asset_license": "CC0-1.0",
+  "asset_rightsholder": "Bungaku Yokota"
+}

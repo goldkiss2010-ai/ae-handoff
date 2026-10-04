@@ -1,0 +1,13 @@
+{
+  "profile": "point3-pv",
+  "progress_coordinate": "stored_sample_index",
+  "sample_rate": 1,
+  "velocity": "position_derivative_per_stored_sample_interval",
+  "length_unit": "unitless",
+  "coordinate_system": "right-handed XYZ, Z-up",
+  "scalar0": "particle index divided by particle count, unitless",
+  "example_playback_samples_per_second": 12,
+  "description": "Analytic circular-motion example; not a fluid simulation",
+  "asset_license": "CC0-1.0",
+  "asset_rightsholder": "Bungaku Yokota"
+}

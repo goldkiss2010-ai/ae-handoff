@@ -1,0 +1,12 @@
+Licenses selected on 2026-10-04 by Bungaku Yokota.
+MIT: original FLD1/code/documentation and original contributions in AEHandoff.aex.
+CC0-1.0: distributed particle caches, companion settings and previews.
+Adobe SDK-derived portions are excluded from these grants.
+Plugin source, build files and private development history are not distributed.
+See LICENSE, LICENSE_SCOPE.md, LICENSES/CC0-1.0.txt, EULA.md and THIRD_PARTY_NOTICES.md.
+Distribution status: Windows x64 preview and public-scope reference tools; private history excluded.
+Supplied SDK notice inventory reviewed on 2026-10-04: 99 files, 44 notice blocks retained in THIRD_PARTY_NOTICES.md.
+Original Skeleton.cpp/.h notices are retained; SkeletonPiPL.r has no opening notice according to the builder.
+The reviewed README candidates are project development instructions, not a separate Adobe license.
+Inventory review is complete for the supplied scope; exact binary compilation dependencies were not traced.
+Adobe's actual terms continue to apply. Refresh notices if the SDK or dependencies change.
