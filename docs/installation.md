@@ -1,5 +1,7 @@
 # AE Handoff 1.14 — Windows x64 試験版
 
+Mac版（Apple Silicon）の導入は[Mac用の手順](installation-macos.md)を参照してください。
+
 FLD1に保存した粒子状態をAfter Effectsで描画し、時間・視点・色・サイズ・合成を編集します。
 このZIPにはビルド済みプラグインと、小さな確認用キャッシュを収録しています。
 既存キャッシュの再生には、Python、Visual Studio、AE SDKは不要です。

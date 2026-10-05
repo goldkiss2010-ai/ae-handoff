@@ -2,11 +2,13 @@
 
 [Windows x64プラグインZIP](https://github.com/goldkiss2010-ai/ae-handoff/raw/refs/heads/main/downloads/AEHandoff_1.14_Windows_x64_preview.zip) · [導入手順](installation.md)
 
-WindowsビルドとAEでの基本動作は2026-10-04に作者確認済みです。Mac版は未提供です。
+WindowsビルドとAEでの基本動作は2026-10-04に作者確認済みです。Mac版（Apple Silicon）は2026-10-05にM4 Pro / macOS Tahoe 26.5.1 / AE 26.5で基本動作確認済みです。
+[Mac版の導入・初回許可の手順](installation-macos.md)を参照してください。Mac用プラグインZIPの公開Release掲載は準備中です。
+粒子場のFLD1はWindows・Mac共通です。
 
 ## 完成粒子場
 
-個別ZIPを準備済みです。大容量キャッシュは[Releases](https://github.com/goldkiss2010-ai/ae-handoff/releases)への掲載を準備中です。
+個別ZIPは[Releases](https://github.com/goldkiss2010-ai/ae-handoff/releases/tag/v1.14-preview.1)からダウンロードできます。
 
 | ZIP | 容量（約MB） | Samples / Second | Rotation X |
 |---|---:|---:|---:|
@@ -21,4 +23,4 @@ WindowsビルドとAEでの基本動作は2026-10-04に作者確認済みです�
 その他の表示設定は既定値から始めます。設定JSONは説明用で、AEへの自動適用ではありません。
 各ZIPにFLD1、JSON、参照プレビュー、CC0本文、チェックサムを同梱します。既存キャッシュの再生にPythonやSDKは不要です。
 
-掲載前でも、[生成手順](../assets/README.md)で同じ粒子場モデルを生成できます。異なる生成環境でのバイト一致は保証しません。
+また、[生成手順](../assets/README.md)で同じ粒子場モデルを生成できます。異なる生成環境でのバイト一致は保証しません。

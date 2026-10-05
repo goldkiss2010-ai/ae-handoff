@@ -28,9 +28,11 @@ Mode=Dot、Samples / Second=12、Sample Offset=0で、0〜2秒の円運動を確
 ファイルを選ぶまで描画は透明です。FLD1は制作データと一緒に保管してください。
 
 [粒子場のダウンロード案内](docs/downloads.md)に個別パッケージと推奨設定を記載しています。
-大容量キャッシュのReleases掲載を準備中です。生成ツールでも同じモデルのFLD1を作れます。
+大容量キャッシュは[Releases](https://github.com/goldkiss2010-ai/ae-handoff/releases/tag/v1.14-preview.1)から取得できます。生成ツールでも同じモデルのFLD1を作れます。
 配布済みキャッシュだけを使う場合、下記の生成環境は不要です。
-Mac版プラグインは未提供です。FLD1とPython生成ツールはMacでも扱えます。
+Mac版はApple Silicon向けプレビュー版を実機で基本動作確認済みです（M4 Pro / macOS Tahoe 26.5.1 / AE 26.5、2026-10-05）。
+[Mac版の導入・初回許可の手順](docs/installation-macos.md)を参照してください。Mac用ZIPの公開Release掲載は準備中です。
+FLD1はWindows・Macで共通です。
 
 ## 配布用の粒子場
 
