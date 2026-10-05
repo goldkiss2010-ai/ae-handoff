@@ -31,8 +31,8 @@ Mode=Dot、Samples / Second=12、Sample Offset=0で、0〜2秒の円運動を確
 大容量キャッシュは[Releases](https://github.com/goldkiss2010-ai/ae-handoff/releases/tag/v1.14-preview.1)から取得できます。生成ツールでも同じモデルのFLD1を作れます。
 配布済みキャッシュだけを使う場合、下記の生成環境は不要です。
 Mac版はApple Silicon向けプレビュー版を実機で基本動作確認済みです（M4 Pro / macOS Tahoe 26.5.1 / AE 26.5、2026-10-05）。
-[Mac版の導入・初回許可の手順](docs/installation-macos.md)を参照してください。[Mac用ZIP](https://github.com/goldkiss2010-ai/ae-handoff/releases/download/v1.14-preview.1/AEHandoff-macOS-arm64-test.zip)を公開しました。
-配布中のMac用ZIPはActionsのArtifact形式です。展開すると中に配布用ZIPがあり、そのZIPをさらに展開して`AEHandoff.plugin`とREADMEを取り出してください。
+[Mac版の導入・初回許可の手順](docs/installation-macos.md)を参照してください。[Mac用ZIP](https://github.com/goldkiss2010-ai/ae-handoff/releases/download/v1.14-preview.1/AEHandoff_1.14_macOS_arm64_test.zip)を公開しました。
+Mac用ZIPを展開して、`AEHandoff.plugin`とREADMEを取り出してください。
 FLD1はWindows・Macで共通です。
 
 ## 配布用の粒子場
