@@ -1,11 +1,18 @@
 {
   "tag": "v1.14-preview.1",
-  "release_title": "AE Handoff 1.14 — Windows x64 Preview",
+  "release_title": "AE Handoff 1.15 — macOS Apple Silicon Preview",
   "assets": [
     {
-      "filename": "AEHandoff_1.14_Windows_x64_preview.zip",
-      "size_bytes": 177848,
-      "sha256": "9105c46036c7f59bc7aa05031ddd8a38bc2558091f41dd36be321220ea853eca",
+      "filename": "AEHandoff_1.15_macOS_arm64_test.zip",
+      "size_bytes": 103615,
+      "sha256": "0ec6043440595afc150f07cdf6dd14d0e254ea1e6368d271f3105c670d274e76",
+      "protected_files_unchanged": true,
+      "checksums": "passed"
+    },
+    {
+      "filename": "AEHandoff_1.15_Windows_x64_preview.zip",
+      "size_bytes": 171054,
+      "sha256": "862a638caaf4fc3390b37dcf1d67741c6f1f172042cfa3482a3bf641f463887f",
       "protected_files_unchanged": true,
       "checksums": "passed"
     },
