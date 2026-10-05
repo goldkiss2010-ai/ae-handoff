@@ -14,7 +14,7 @@
   "bounds_min": [
     -1.0836644172668457,
     -0.3345464766025543,
-    0.0
+    0
   ],
   "bounds_max": [
     0.5776401162147522,
@@ -30,27 +30,11 @@
     "count": 20000,
     "samples": 49,
     "seed": 20261004,
-    "internal_phase_span": 4.0
+    "internal_phase_span": 4
   },
   "environment": {
     "python": "3.12.14",
     "numpy": "2.3.5"
-  },
-  "suggested_ae": {
-    "samples_per_second": 12.0,
-    "sample_offset": 0,
-    "mode": "Dot",
-    "density_percent": 100,
-    "size": 1,
-    "object_rotation_xyz_degrees": [
-      -75,
-      0,
-      0
-    ],
-    "speed_brightness": 0,
-    "streak_time": 0,
-    "notes": "Use plugin visual defaults; only Smoke Plume Rotation X=-75 and Ripple Sheet Rotation X=15 differ. Playback rate is specified separately for sample-count matching.",
-    "visual_settings_base": "plugin_defaults"
   },
   "emission": {
     "source": [
@@ -65,8 +49,21 @@
   },
   "playback_note": "Suggested 4-second playback is a DCC setting, not an absolute time encoded in FLD1. Endpoint hold; not a seamless loop.",
   "reproducibility": "Seed and settings retained; byte identity across NumPy/platform versions is not guaranteed.",
-  "distribution_status": "Private distribution draft; code MIT; distributed cache/settings/previews CC0-1.0; no third-party source media.",
+  "distribution_status": "Public FLD1 asset pack; distributed cache/settings/previews are CC0-1.0; no third-party source media.",
   "generator_license": "MIT",
   "asset_license": "CC0-1.0",
-  "asset_rightsholder": "Bungaku Yokota"
+  "asset_rightsholder": "Bungaku Yokota",
+  "suggested_playback": {
+    "samples_per_second": 12,
+    "sample_offset": 0,
+    "note": "Host-side presentation suggestion; absolute presentation time is not encoded in FLD1."
+  },
+  "suggested_view": {
+    "initial_rotation_xyz_degrees": [
+      -75,
+      0,
+      0
+    ],
+    "note": "Optional host-side starting orientation; not part of the FLD1 state contract."
+  }
 }
