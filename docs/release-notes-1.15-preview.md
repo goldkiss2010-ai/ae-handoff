@@ -15,7 +15,7 @@ From computation to composition.
 
 View Depth Splitは完全なZ-bufferや粒子同士の遮蔽ではなく、1枚の深度面による表示上の分割です。
 
-## 検証
+\n## FLD1 Asset Pack\n\n従来の6個の個別 `AEHandoff_*_v01.zip` は、ホスト非依存の [`FLD1_Asset_Pack_v01.zip`](https://github.com/goldkiss2010-ai/ae-handoff/releases/download/v1.15-preview.1/FLD1_Asset_Pack_v01.zip) に統合しました。READMEと設定JSONからAE固有の表示記述を分離し、AE Handoff / Fusion Handoff / その他のFLD1 readerで共通に扱える配布物としています。\n\n## 検証
 
 2026-10-05に作者環境でWindows x64ビルド、AE基本動作、View Depth Split、Focus Depthを確認済みです。
 配布ZIP内のAEHandoff.aexは確認済みビルドと同一です。
