@@ -1,11 +1,11 @@
-# AE Handoff 1.14 — macOS / Apple Silicon プレビュー版
+# AE Handoff 1.15 — macOS / Apple Silicon プレビュー版
 
-FLD1をAfter Effectsで描画するMac移植版です。Apple Silicon（M1以降）向けのarm64ビルドで、Intel Macには対応していません。
+FLD1をAfter Effectsで描画する1.15 Mac移植版です。Apple Silicon（M1以降）向けのarm64ビルドで、Intel Macには対応していません。
 プラグインは `AEHandoff.plugin`、粒子場のFLD1と設定説明JSONはWindows版と共通です。変換は不要です。
 
 ## 動作確認環境
 
-2026-10-05、検証協力者から以下の環境で基本動作の確認報告を受けました。
+1.14は2026-10-05に以下の環境で基本動作を確認済みです。1.15 arm64ビルドも作成済みで、View Depth Split / Focus Depthを含む実機確認を継続しています。
 
 | 項目 | 確認環境 |
 |---|---|
@@ -67,3 +67,9 @@ Effectsなどの既存フォルダ自体は削除しないでください。
 
 AEの再インストールだけでは、残っているプラグインが取り除かれない場合があります。
 不具合の報告には、Macのチップ・macOS・AEの版、操作と警告文を添えてください。
+
+
+## 1.15の追加確認
+
+1.15ではView Depth Split / Focus Depthを追加し、独立したMask Gateを廃止しました。
+基本描画を確認した後、View Depth SplitをFront / Backへ切り替え、Focus Depthで画面平行の分割面が前後へ移動することを確認してください。
