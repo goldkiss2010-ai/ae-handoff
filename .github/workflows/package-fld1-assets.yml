@@ -26,7 +26,7 @@ jobs:
           gh release download "$TAG" --repo "$GITHUB_REPOSITORY" --dir _release_assets --pattern "AEHandoff_*_v01.zip"
           ls -lh _release_assets
 
-      - name: Build host-neutral combined pack
+      - name: Build and verify host-neutral combined pack
         run: |
           python tools/package_fld1_assets.py \
             --input _release_assets \
@@ -34,10 +34,17 @@ jobs:
             --cc0 LICENSES/CC0-1.0.txt
           sha256sum "$OUT"
           ls -lh "$OUT"
+          unzip -t "$OUT" >/dev/null
 
       - name: Upload combined pack to release
         run: |
           gh release upload "$TAG" "$OUT" --repo "$GITHUB_REPOSITORY" --clobber
+
+      - name: Remove superseded per-asset release ZIPs
+        run: |
+          gh api "repos/$GITHUB_REPOSITORY/releases/tags/$TAG" --jq '.assets[] | select(.name | startswith("AEHandoff_")) | select(.name | endswith("_v01.zip")) | .id' | while read -r id; do
+            gh api --method DELETE "repos/$GITHUB_REPOSITORY/releases/assets/$id"
+          done
 
       - name: Record result
         run: |
