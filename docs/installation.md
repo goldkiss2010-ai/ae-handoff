@@ -1,4 +1,4 @@
-# AE Handoff 1.14 — Windows x64 試験版
+# AE Handoff 1.15 — Windows x64 試験版
 
 Mac版（Apple Silicon）の導入は[Mac用の手順](installation-macos.md)を参照してください。
 
@@ -6,10 +6,9 @@ FLD1に保存した粒子状態をAfter Effectsで描画し、時間・視点・
 このZIPにはビルド済みプラグインと、小さな確認用キャッシュを収録しています。
 既存キャッシュの再生には、Python、Visual Studio、AE SDKは不要です。
 
-Windows x64の試験版です。以前の独立構成のWindowsビルドとAE基本動作は作者から成功報告を受領。
-2026-10-04に新しい.aexを受領して差し替えました。同日、差し替えZIPのAE基本動作成功を作者が報告しました。
-対応するAEの版の範囲、保存・再起動、別PCでの動作は、今後の確認項目です。
-今回のAE・Windowsの詳細なバージョン番号は未記録です。
+Windows x64の試験版です。1.15は2026-10-05に作者環境でビルドし、AE基本動作、View Depth Split、Focus Depthを確認済みです。
+1.15では独立したMask Gateを廃止し、View / Cameraに画面平行の深度分割を追加しました。
+対応するAEの版の範囲、保存・再起動、別PCでの動作は継続確認項目です。
 
 ## インストール
 
@@ -60,6 +59,7 @@ JSONは座標・微分・推奨再生設定の説明です。AEが設定を自�
 - 密度の調整はRenderingのDensity。ファイル内の粒子数や状態は変わりません。
 - 視点・回転・配置・色・サイズはAE側で調整します。視点操作はプラグイン独自のものです。
 - 同じパスのFLD1を外部で更新したらRefresh File → Reloadを押します。
+- View Depth Split=Front / Backで、画面と平行なFocus Depth面を境に粒子を前後へ分けられます。2枚のAE Handoffの間へ通常のAEレイヤーを置く用途を想定しています。
 
 ## キャッシュとプロジェクト
 
@@ -69,10 +69,8 @@ JSONは座標・微分・推奨再生設定の説明です。AEが設定を自�
 
 ## 検証記録
 
-- 作者の報告：以前の独立構成のWindowsビルド成功、AEでの基本動作成功。
-- 今回の添付.aex：受領済み。差し替えZIPのAE基本動作成功を作者が同日報告。
-- パッケージ確認：Windows x64 DLL、必要なエクスポート、PiPL 1.14 development build 1、
-  Release用ランタイムの参照を確認。元の.aexとZIP内の.aexは同一です。
+- 2026-10-05：1.15のWindows x64ビルド、AE基本動作、View Depth Split、Focus Depthを作者確認済み。
+- パッケージ確認：配布ZIP内のAEHandoff.aexは確認済みビルドと同一です。
 - 確認用FLD1：ヘッダー・サイズ・全レコードの有限値を検査しました。
 - 今後の確認：.aep保存後の再起動・参照復元、複製、Undo/Redo、別PC、各粒子場の見た目。
 
