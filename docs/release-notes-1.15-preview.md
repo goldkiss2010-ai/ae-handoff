@@ -21,10 +21,10 @@ View Depth Splitは完全なZ-bufferや粒子同士の遮蔽ではなく、1枚�
 配布ZIP内のAEHandoff.aexは確認済みビルドと同一です。
 
 Windows版ZIP：
-[AEHandoff_1.15_Windows_x64_preview.zip](https://github.com/goldkiss2010-ai/ae-handoff/releases/download/v1.14-preview.1/AEHandoff_1.15_Windows_x64_preview.zip)
+[AEHandoff_1.15_Windows_x64_preview.zip](https://github.com/goldkiss2010-ai/ae-handoff/releases/download/v1.15-preview.1/AEHandoff_1.15_Windows_x64_preview.zip)
 
 macOS Apple Silicon版：
-[AEHandoff_1.15_macOS_arm64_test.zip](https://github.com/goldkiss2010-ai/ae-handoff/releases/download/v1.14-preview.1/AEHandoff_1.15_macOS_arm64_test.zip)
+[AEHandoff_1.15_macOS_arm64_test.zip](https://github.com/goldkiss2010-ai/ae-handoff/releases/download/v1.15-preview.1/AEHandoff_1.15_macOS_arm64_test.zip)
 
 macOS 1.15はarm64ビルド済みです。1.14はM4 Pro / macOS Tahoe 26.5.1 / AE 26.5で基本動作確認済みで、1.15の実機確認を継続しています。
 FLD1キャッシュはWindows / Macで共通です。
