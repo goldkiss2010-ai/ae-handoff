@@ -8,8 +8,8 @@ FLD1に保存した粒子場をAEで描画し、時間・視点・色・サイ�
 数式、シミュレーション、画像からの点群、手続き生成など、生成方法は自由です。
 Pythonは付属の生成ツールの実装言語であり、FLD1の必須条件ではありません。
 
-AE Handoff 1.14のWindows x64試験版、使い方、SDK非依存の粒子場生成ツールを提供します。
-AEプラグインはビルド済みWindows x64版を別パッケージで配布する方針です。
+AE Handoff 1.14のWindows x64試験版・macOS Apple Siliconプレビュー版、使い方、SDK非依存の粒子場生成ツールを提供します。
+AEプラグインはビルド済みバイナリを別パッケージで配布します。
 プラグインのC++ソース、ビルド設定、Adobe SDK、非公開の開発履歴は含めません。
 
 ## 使う・作る・持ち込む
@@ -31,7 +31,8 @@ Mode=Dot、Samples / Second=12、Sample Offset=0で、0〜2秒の円運動を確
 大容量キャッシュは[Releases](https://github.com/goldkiss2010-ai/ae-handoff/releases/tag/v1.14-preview.1)から取得できます。生成ツールでも同じモデルのFLD1を作れます。
 配布済みキャッシュだけを使う場合、下記の生成環境は不要です。
 Mac版はApple Silicon向けプレビュー版を実機で基本動作確認済みです（M4 Pro / macOS Tahoe 26.5.1 / AE 26.5、2026-10-05）。
-[Mac版の導入・初回許可の手順](docs/installation-macos.md)を参照してください。Mac用ZIPの公開Release掲載は準備中です。
+[Mac版の導入・初回許可の手順](docs/installation-macos.md)を参照してください。[Mac用ZIP](https://github.com/goldkiss2010-ai/ae-handoff/releases/download/v1.14-preview.1/AEHandoff-macOS-arm64-test.zip)を公開しました。
+配布中のMac用ZIPはActionsのArtifact形式です。展開すると中に配布用ZIPがあり、そのZIPをさらに展開して`AEHandoff.plugin`とREADMEを取り出してください。
 FLD1はWindows・Macで共通です。
 
 ## 配布用の粒子場
