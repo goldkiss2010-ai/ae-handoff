@@ -8,7 +8,7 @@ FLD1に保存した粒子場をAEで描画し、時間・視点・色・サイ�
 数式、シミュレーション、画像からの点群、手続き生成など、生成方法は自由です。
 Pythonは付属の生成ツールの実装言語であり、FLD1の必須条件ではありません。
 
-AE Handoff 1.14のWindows x64試験版・macOS Apple Siliconプレビュー版、使い方、SDK非依存の粒子場生成ツールを提供します。
+AE Handoff 1.15のWindows x64試験版と、1.14のmacOS Apple Siliconプレビュー版、使い方、SDK非依存の粒子場生成ツールを提供します。
 AEプラグインはビルド済みバイナリを別パッケージで配布します。
 プラグインのC++ソース、ビルド設定、Adobe SDK、非公開の開発履歴は含めません。
 
@@ -20,7 +20,7 @@ AEプラグインはビルド済みバイナリを別パッケージで配布し
 
 ## AEで始める
 
-[Windows x64プラグインZIP](https://github.com/goldkiss2010-ai/ae-handoff/raw/refs/heads/main/downloads/AEHandoff_1.14_Windows_x64_preview.zip)をダウンロードし、
+[Windows x64プラグインZIP](https://github.com/goldkiss2010-ai/ae-handoff/releases/download/v1.14-preview.1/AEHandoff_1.15_Windows_x64_preview.zip)をダウンロードし、
 [導入手順](docs/installation.md)に従って`AEHandoff.aex`をインストールします。
 平面にAE Handoffを適用し、最上段のSelect FileでFLD1を選択します。
 `samples/orbit-sample-index.fld1`は128粒子・25サンプルの小さな確認用です。
