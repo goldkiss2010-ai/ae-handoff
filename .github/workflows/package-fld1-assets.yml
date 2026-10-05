@@ -1,0 +1,47 @@
+name: Package FLD1 asset pack
+
+on:
+  push:
+    paths:
+      - ".github/workflows/package-fld1-assets.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      TAG: v1.15-preview.1
+      OUT: FLD1_Asset_Pack_v01.zip
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download current per-asset ZIPs
+        run: |
+          mkdir -p _release_assets
+          gh release download "$TAG" --repo "$GITHUB_REPOSITORY" --dir _release_assets --pattern "AEHandoff_*_v01.zip"
+          ls -lh _release_assets
+
+      - name: Build host-neutral combined pack
+        run: |
+          python tools/package_fld1_assets.py \
+            --input _release_assets \
+            --output "$OUT" \
+            --cc0 LICENSES/CC0-1.0.txt
+          sha256sum "$OUT"
+          ls -lh "$OUT"
+
+      - name: Upload combined pack to release
+        run: |
+          gh release upload "$TAG" "$OUT" --repo "$GITHUB_REPOSITORY" --clobber
+
+      - name: Record result
+        run: |
+          echo "### FLD1 asset pack" >> "$GITHUB_STEP_SUMMARY"
+          echo >> "$GITHUB_STEP_SUMMARY"
+          sha256sum "$OUT" >> "$GITHUB_STEP_SUMMARY"
+          ls -lh "$OUT" >> "$GITHUB_STEP_SUMMARY"
