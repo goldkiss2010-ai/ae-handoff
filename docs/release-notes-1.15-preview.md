@@ -1,8 +1,8 @@
-# AE Handoff 1.15 — Windows x64 Preview
+# AE Handoff 1.15 — Windows / macOS Preview
 
 From computation to composition.
 
-1.15はWindows x64向けのプレビュー更新です。FLD1の粒子場をAE内で描画し、
+1.15はWindows x64 / macOS Apple Silicon向けのプレビュー更新です。FLD1の粒子場をAE内で描画し、
 時間・視点・色・サイズ・合成を編集する基本構成は1.14を継承します。
 
 ## 1.15の変更
@@ -23,4 +23,8 @@ View Depth Splitは完全なZ-bufferや粒子同士の遮蔽ではなく、1枚�
 Windows版ZIP：
 [AEHandoff_1.15_Windows_x64_preview.zip](https://github.com/goldkiss2010-ai/ae-handoff/releases/download/v1.14-preview.1/AEHandoff_1.15_Windows_x64_preview.zip)
 
-macOS Apple Silicon版は現在1.14です。FLD1キャッシュはWindows / Macで共通です。
+macOS Apple Silicon版：
+[AEHandoff_1.15_macOS_arm64_test.zip](https://github.com/goldkiss2010-ai/ae-handoff/releases/download/v1.14-preview.1/AEHandoff_1.15_macOS_arm64_test.zip)
+
+macOS 1.15はarm64ビルド済みです。1.14はM4 Pro / macOS Tahoe 26.5.1 / AE 26.5で基本動作確認済みで、1.15の実機確認を継続しています。
+FLD1キャッシュはWindows / Macで共通です。
