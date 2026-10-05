@@ -17,45 +17,11 @@
       "checksums": "passed"
     },
     {
-      "filename": "AEHandoff_VortexRing_20K_v01.zip",
-      "size_bytes": 27776183,
-      "sha256": "6a3d8d88aa18c2a129c1049e8e2453f30d5a338c08978384d8c9a0e9deb880dc",
-      "protected_files_unchanged": true,
-      "checksums": "passed"
-    },
-    {
-      "filename": "AEHandoff_SmokePointSource_20K_v01.zip",
-      "size_bytes": 12668872,
-      "sha256": "b803cad64889ba4ad4a40b1d52d4b91bbb5d564c47fea6c33893cd069b6bb315",
-      "protected_files_unchanged": true,
-      "checksums": "passed"
-    },
-    {
-      "filename": "AEHandoff_RippleSheet_20K_v01.zip",
-      "size_bytes": 18595541,
-      "sha256": "6086ca2b40fda88bdcc3ef20c5147ef21e0dd86f2f897fb9dcc6d6c53d61649f",
-      "protected_files_unchanged": true,
-      "checksums": "passed"
-    },
-    {
-      "filename": "AEHandoff_WindTunnel_20K_v01.zip",
-      "size_bytes": 22216905,
-      "sha256": "4cbe112a8c723cd87d43a9c32505807ad7d5208238c536b1c52180f7ea7512b6",
-      "protected_files_unchanged": true,
-      "checksums": "passed"
-    },
-    {
-      "filename": "AEHandoff_PlaneToTorus_20K_v01.zip",
-      "size_bytes": 26231632,
-      "sha256": "3bebf72b1fe85f06af76e18902d9182c1586a5c9871257de7b3376ba0e0f83a5",
-      "protected_files_unchanged": true,
-      "checksums": "passed"
-    },
-    {
-      "filename": "AEHandoff_VortexRing_1M_v01.zip",
-      "size_bytes": 409630159,
-      "sha256": "cda4a7871dd5759cb2d703e6c4f179a591f6ac54cb08185d2d637eb9cb867c50",
-      "protected_files_unchanged": true,
+      "filename": "FLD1_Asset_Pack_v01.zip",
+      "size_bytes": 517123175,
+      "sha256": "ce09286cf06acf06e7465b2f310a0145ab4c5589694984ac9fbe23146f755c80",
+      "host_independent": true,
+      "license": "CC0-1.0",
       "checksums": "passed"
     }
   ]
