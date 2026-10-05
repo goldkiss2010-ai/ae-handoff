@@ -16,8 +16,8 @@ AE Handoffは [DCC Handoff](https://github.com/goldkiss2010-ai/dcc-handoff) のA
 
 | Platform | Package | Status |
 |---|---|---|
-| Windows x64 | [AEHandoff_1.15_Windows_x64_preview.zip](https://github.com/goldkiss2010-ai/ae-handoff/releases/download/v1.14-preview.1/AEHandoff_1.15_Windows_x64_preview.zip) | ビルド・AE基本動作・View Depth Split確認済み |
-| macOS Apple Silicon | [AEHandoff_1.15_macOS_arm64_test.zip](https://github.com/goldkiss2010-ai/ae-handoff/releases/download/v1.14-preview.1/AEHandoff_1.15_macOS_arm64_test.zip) | arm64ビルド済み。1.14でM4 Pro / AE 26.5基本動作確認、1.15実機確認を継続 |
+| Windows x64 | [AEHandoff_1.15_Windows_x64_preview.zip](https://github.com/goldkiss2010-ai/ae-handoff/releases/download/v1.15-preview.1/AEHandoff_1.15_Windows_x64_preview.zip) | ビルド・AE基本動作・View Depth Split確認済み |
+| macOS Apple Silicon | [AEHandoff_1.15_macOS_arm64_test.zip](https://github.com/goldkiss2010-ai/ae-handoff/releases/download/v1.15-preview.1/AEHandoff_1.15_macOS_arm64_test.zip) | arm64ビルド済み。1.14でM4 Pro / AE 26.5基本動作確認、1.15実機確認を継続 |
 
 [1.15 release notes](docs/release-notes-1.15-preview.md) · [Windows導入](docs/installation.md) · [macOS導入](docs/installation-macos.md) · [粒子場ダウンロード](docs/downloads.md)
 
