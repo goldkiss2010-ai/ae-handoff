@@ -132,21 +132,26 @@ x y z  vx vy vz  visibility  scalar0
 
 [固定規約](core/docs/contract-v1.md) · [バイト配置](core/docs/format.md) · [AE側の操作](docs/player-design.md) · [自作アセット](docs/asset-authoring.md)
 
-## 配布用の粒子場
+## FLD1 Asset Pack
 
-公開済みの確認・制作素材：
+確認・制作用の粒子場は、ホスト非依存の1パッケージへ統合しました。
 
-| Asset | Initial Rotation X |
-|---|---:|
-| Vortex Ring | 0° |
-| Smoke Point Source | -75° |
-| Ripple Sheet | 15° |
-| Wind Tunnel | 0° |
-| Plane to Torus | 0° |
+[**FLD1_Asset_Pack_v01.zip**](https://github.com/goldkiss2010-ai/ae-handoff/releases/download/v1.15-preview.1/FLD1_Asset_Pack_v01.zip) — 約494 MiB
 
-2万粒子版は49サンプル、100万粒子Vortex Ringは17サンプルです。推奨設定とダウンロードは [docs/downloads.md](docs/downloads.md) を参照してください。
+収録内容：
 
-煙・風洞は手続き流れのモデルで、厳密な流体ソルバー結果ではありません。
+| Asset | Particles | Samples | Suggested Samples / Second | Initial Rotation X |
+|---|---:|---:|---:|---:|
+| Vortex Ring | 20K | 49 | 12 | 0° |
+| Smoke Point Source | 20K | 49 | 12 | -75° |
+| Ripple Sheet | 20K | 49 | 12 | 15° |
+| Wind Tunnel | 20K | 49 | 12 | 0° |
+| Plane to Torus | 20K | 49 | 12 | 0° |
+| Vortex Ring | 1M | 17 | 4 | 0° |
+
+パック内のREADMEとJSONはAE専用ではなく、FLD1の状態と表示上の推奨値を記述します。同じFLD1をAE Handoff、Fusion Handoff、その他のFLD1 readerで利用できます。
+
+煙・風洞は手続き流れのモデルで、厳密な流体ソルバー結果ではありません。詳しくは [docs/downloads.md](docs/downloads.md) を参照してください。
 
 ## 粒子場を生成する
 
