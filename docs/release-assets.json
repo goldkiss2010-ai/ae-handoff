@@ -1,6 +1,6 @@
 {
-  "tag": "v1.14-preview.1",
-  "release_title": "AE Handoff 1.15 — macOS Apple Silicon Preview",
+  "tag": "v1.15-preview.1",
+  "release_title": "AE Handoff 1.15 — Windows / macOS Preview",
   "assets": [
     {
       "filename": "AEHandoff_1.15_macOS_arm64_test.zip",
