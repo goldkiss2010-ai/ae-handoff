@@ -1,61 +1,156 @@
-![AE Handoff — From computation to composition.](branding/key-visual.jpg)
+![AE Handoff](branding/key-visual.jpg)
 
 # AE Handoff
 
 **粒子の状態を渡し、After Effectsで制作を続ける。**
 
-FLD1に保存した粒子場をAEで描画し、時間・視点・色・サイズ・合成を編集します。
-数式、シミュレーション、画像からの点群、手続き生成など、生成方法は自由です。
-Pythonは付属の生成ツールの実装言語であり、FLD1の必須条件ではありません。
+AE Handoffは、外部で計算した粒子状態をFLD1で受け取り、After Effects内で再構成・投影・描画するプレビュー版プラグインです。
 
-AE Handoff 1.15のWindows x64試験版と、1.14のmacOS Apple Siliconプレビュー版、使い方、SDK非依存の粒子場生成ツールを提供します。
-AEプラグインはビルド済みバイナリを別パッケージで配布します。
-プラグインのC++ソース、ビルド設定、Adobe SDK、非公開の開発履歴は含めません。
+シミュレーションや手続き生成は外部で行い、**時間・視点・色・サイズ・密度・合成はAE側に残す**ことを目的にしています。Pythonは付属生成ツールの実装言語であり、FLD1やAE Handoffの必須条件ではありません。
 
-## 使う・作る・持ち込む
+AE Handoffは [DCC Handoff](https://github.com/goldkiss2010-ai/dcc-handoff) のAfter Effects実装です。同じFLD1を読む [Fusion Handoff](https://github.com/goldkiss2010-ai/fusion-handoff) も開発しています。
 
-1. **使う**：プラグインと完成済みFLD1を用意し、AEで制作します。Python・Visual Studio・SDKは不要です。
-2. **作り替える**：付属の粒子場生成コードを変更し、新しいFLD1を書き出します。
-3. **持ち込む**：任意の言語・ソルバーからFLD1を書き出します。AEプラグインのソースは不要です。
+## 1.15 Preview
 
-## AEで始める
+現在の公開版は **AE Handoff 1.15** です。
 
-[Windows x64プラグインZIP](https://github.com/goldkiss2010-ai/ae-handoff/releases/download/v1.14-preview.1/AEHandoff_1.15_Windows_x64_preview.zip)をダウンロードし、
-[導入手順](docs/installation.md)に従って`AEHandoff.aex`をインストールします。
-平面にAE Handoffを適用し、最上段のSelect FileでFLD1を選択します。
-`samples/orbit-sample-index.fld1`は128粒子・25サンプルの小さな確認用です。
-Mode=Dot、Samples / Second=12、Sample Offset=0で、0〜2秒の円運動を確認できます。
-ファイルを選ぶまで描画は透明です。FLD1は制作データと一緒に保管してください。
+| Platform | Package | Status |
+|---|---|---|
+| Windows x64 | [AEHandoff_1.15_Windows_x64_preview.zip](https://github.com/goldkiss2010-ai/ae-handoff/releases/download/v1.14-preview.1/AEHandoff_1.15_Windows_x64_preview.zip) | ビルド・AE基本動作・View Depth Split確認済み |
+| macOS Apple Silicon | [AEHandoff_1.15_macOS_arm64_test.zip](https://github.com/goldkiss2010-ai/ae-handoff/releases/download/v1.14-preview.1/AEHandoff_1.15_macOS_arm64_test.zip) | arm64ビルド済み。1.14でM4 Pro / AE 26.5基本動作確認、1.15実機確認を継続 |
 
-[粒子場のダウンロード案内](docs/downloads.md)に個別パッケージと推奨設定を記載しています。
-大容量キャッシュは[Releases](https://github.com/goldkiss2010-ai/ae-handoff/releases/tag/v1.14-preview.1)から取得できます。生成ツールでも同じモデルのFLD1を作れます。
-配布済みキャッシュだけを使う場合、下記の生成環境は不要です。
-Mac版はApple Silicon向けプレビュー版を実機で基本動作確認済みです（M4 Pro / macOS Tahoe 26.5.1 / AE 26.5、2026-10-05）。
-[Mac版の導入・初回許可の手順](docs/installation-macos.md)を参照してください。[Mac用ZIP](https://github.com/goldkiss2010-ai/ae-handoff/releases/download/v1.14-preview.1/AEHandoff_1.14_macOS_arm64_test.zip)を公開しました。
-Mac用ZIPを展開して、`AEHandoff.plugin`とREADMEを取り出してください。
-FLD1はWindows・Macで共通です。
+[1.15 release notes](docs/release-notes-1.15-preview.md) · [Windows導入](docs/installation.md) · [macOS導入](docs/installation-macos.md) · [粒子場ダウンロード](docs/downloads.md)
+
+## 何をしているか
+
+```text
+Python / C++ / solver / procedural generation
+                    |
+                    | particle state
+                    v
+                   FLD1
+                    |
+                    v
+               AE Handoff
+                    |
+      +-------------+-------------+
+      |             |             |
+ interpolation   3D view      rasterization
+      |             |             |
+      +-------------+-------------+
+                    |
+                    v
+               RGBA frame
+                    |
+                    v
+          normal AE composition
+```
+
+AEから見ると1つのエフェクト／レイヤーですが、内部ではFLD1の3D粒子状態を読み、Hermite補間、3D変換、透視投影、粒子・ストリークのラスタライズを行っています。
+
+100万粒子を100万個のAEオブジェクトへ展開する方式ではありません。
+
+## 使う・作り替える・持ち込む
+
+1. **使う** — プラグインと完成済みFLD1だけで制作します。Python、Visual Studio、AE SDKは不要です。
+2. **作り替える** — 付属の生成コードを変更し、新しいFLD1を書き出します。
+3. **持ち込む** — 任意の言語・ソルバー・解析コードからFLD1を書き出します。
+
+生成方法は、解析式、物理シミュレーション、画像由来の点群、手続き生成など自由です。
+
+## Quick start
+
+1. OSに合う1.15 ZIPを取得してプラグインをインストールします。
+2. AEでコンポジションサイズの平面を作り、**AE Handoff**を適用します。
+3. 最上段の **Select File** からFLD1を選びます。
+4. 付属の `orbit-sample-index.fld1` なら、Mode=Dot、Samples / Second=12、Sample Offset=0で0〜2秒の円運動を確認できます。
+5. Rendering / Playback / Viewの値をAE側で変更します。
+
+FLD1はフッテージとして読み込む必要はありません。キャッシュ本体は.aepへ埋め込まれないため、制作データと一緒に保管してください。
+
+## 表示機能
+
+現在の主要な表示機能：
+
+- Dot / Sprite / Image Dots
+- Density
+- Particle Size / Color / Opacity
+- Speed Brightness
+- Depth Cue
+- Velocity Streak
+- Object Position / Pivot / Rotation
+- Perspective / View Scale / Dolly / Screen Offset
+- Samples / Second / Sample Offset
+- **View Depth Split: Off / Front / Back**
+- **Focus Depth**
+
+### View Depth Split
+
+Focus Depthはcamera-space Zを直接指定します。分割面は常に**画面／カメラセンサー面と平行**です。
+
+同じFLD1を読むAE Handoffを2枚用意し、
+
+```text
+Back Handoff
+2D layer / text / image / person
+Front Handoff
+```
+
+の順に重ねると、通常のAEレイヤーを粒子群の前後へ挿入できます。
+
+これは完全なZ-bufferや粒子同士の自己遮蔽ではなく、1枚の深度面による表示上の分割です。
+
+## 時間の考え方
+
+新規FLD1は保存サンプル番号
+
+```text
+q = 0, 1, 2, ...
+```
+
+を状態座標として扱います。AE側では
+
+```text
+q = AE time * Samples / Second + Sample Offset
+```
+
+として表示時間へ対応させます。
+
+Samples / Second=0にするとSample Offsetを直接キーフレームや式で操作できるため、シミュレーション側の固定時間に制作を拘束されません。
+
+## FLD1
+
+現在の `point3-pv` 基本プロファイルは、1粒子・1保存サンプルにつき8個のfloat32を持ちます。
+
+```text
+x y z  vx vy vz  visibility  scalar0
+```
+
+右手系XYZ・Z-up、粒子数と粒子順は全サンプルで固定です。新規キャッシュは `sample_rate=1`、速度は保存サンプル番号に対する位置の微分 `dx/dq` とします。
+
+仕様の正本は [FLD1 repository](https://github.com/goldkiss2010-ai/fld1) です。
+
+[固定規約](core/docs/contract-v1.md) · [バイト配置](core/docs/format.md) · [AE側の操作](docs/player-design.md) · [自作アセット](docs/asset-authoring.md)
 
 ## 配布用の粒子場
 
-[アセットの説明](assets/README.md)に生成方法、初期表示、モデルの限界を記載しています。
+公開済みの確認・制作素材：
 
-| 素材 | 最初のRotation X |
+| Asset | Initial Rotation X |
 |---|---:|
 | Vortex Ring | 0° |
-| Smoke Plume（一点から発生） | -75° |
+| Smoke Point Source | -75° |
 | Ripple Sheet | 15° |
 | Wind Tunnel | 0° |
 | Plane to Torus | 0° |
 
-他の表示設定はプラグイン既定値から始めます。確認用2万粒子・49サンプルは
-Samples / Second=12、100万粒子Vortex Ring・17サンプルは4で、いずれも4秒で終点に達します。
-付属JSONは説明用で、AEの設定へ自動適用されません。
-煙・風洞は手続き流れのモデルで、厳密な流体ソルバーの結果ではありません。
+2万粒子版は49サンプル、100万粒子Vortex Ringは17サンプルです。推奨設定とダウンロードは [docs/downloads.md](docs/downloads.md) を参照してください。
+
+煙・風洞は手続き流れのモデルで、厳密な流体ソルバー結果ではありません。
 
 ## 粒子場を生成する
 
-Python 3.10以降とNumPyを使用します。ZIPにはFLD1参照ツールを`core/`に収録しているため、
-サブモジュールの取得は不要です。このフォルダのルートで実行します。
+Python 3.10以降とNumPyを使う付属生成例：
 
 ```sh
 python -m pip install -r assets/requirements.txt
@@ -65,27 +160,23 @@ python -m unittest discover -s core/tests -v
 python -m unittest discover -s assets/tests -v
 ```
 
-任意の粒子数・サンプル数・seedは`--count`、`--samples`、`--seed`で指定します。
-環境の作り方とWindowsの仮想環境のコマンドは[アセットの説明](assets/README.md)を参照してください。
-既存キャッシュの検査例：`python core/examples/inspect_cache.py samples/orbit-sample-index.fld1`。
+任意の粒子数・サンプル数・seedは `--count`、`--samples`、`--seed` で指定できます。
 
-## FLD1の基本規約
+## DCC Handoff family
 
-`point3-pv`は右手系XYZ・Z-up、全サンプルで粒子数と順序が固定です。
-1粒子あたり`x y z vx vy vz visibility scalar0`の8個のfloat32を保存します。
-新規キャッシュはsample_rate=1、速度欄は保存サンプル番号に対する位置の微分です。
-秒への対応はAE側で決めます。通常再生はSamples / SecondとSample Offsetを使います。
+- [DCC Handoff](https://github.com/goldkiss2010-ai/dcc-handoff) — 上位アーキテクチャとcross-hostの設計原則
+- [FLD1](https://github.com/goldkiss2010-ai/fld1) — 状態交換フォーマット
+- **AE Handoff** — After Effects実装
+- [Fusion Handoff](https://github.com/goldkiss2010-ai/fusion-handoff) — Fusion / DaVinci Resolve実装
 
-[固定規約](core/docs/contract-v1.md)・[バイト配置](core/docs/format.md)・
-[AE側の操作](docs/player-design.md)・[自作アセット](docs/asset-authoring.md)・
-[提案の方針](CONTRIBUTING.md)を参照してください。
+FLD1はAE専用形式ではありません。AE HandoffもFLD1仕様の正本ではありません。この分離を維持します。
 
-[FLD1リポジトリ](https://github.com/goldkiss2010-ai/fld1)で仕様・参照ツール・将来の検討を管理します。
-このリポジトリにはその参照ツールと粒子場生成コードを収録しています。
-AEプラグイン本体のソース公開と改造版のビルドは、今回の配布範囲には含めません。
-コード・文書とプラグインの自作部分はMIT、配布素材はCC0-1.0です。
-[適用範囲](LICENSE_SCOPE.md)、[MIT本文](LICENSE)、[CC0本文](LICENSES/CC0-1.0.txt)、
-[プラグインの利用条件](EULA.md)、[第三者の表示](THIRD_PARTY_NOTICES.md)を参照してください。
-Adobe由来部分はMITに含めず、プラグイン全体をオープンソースとは表示しません。
-提供されたSDK表示一覧（99ファイル・44表示）の照合と同梱を完了しました。
-SDKや依存先を変更する場合は、第三者表示も更新します。
+## Distribution and license
+
+AEプラグインはビルド済みバイナリとして配布します。公開パッケージにAdobe SDK、プラグインのC++ソース、非公開の開発履歴は含めません。
+
+コード・文書とプラグインの自作部分はMIT、配布粒子素材はCC0-1.0です。Adobe由来部分はMITの対象外です。
+
+[LICENSE_SCOPE.md](LICENSE_SCOPE.md) · [EULA.md](EULA.md) · [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) · [branding](branding/README.md)
+
+Branding images are not covered by the MIT / CC0 grants.
